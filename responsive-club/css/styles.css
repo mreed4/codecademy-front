@@ -1,0 +1,430 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@300&family=Contrail+One&family=Mr+Dafoe&family=Oswald:wght@200&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #111;
+  text-decoration: none;
+}
+
+sup {
+  font-size: 0.8em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  top: -0.2em;
+  margin: 0 -0.2em;
+  color: #a43131;
+  font-weight: 900;
+  transition: transform 100ms linear;
+}
+
+sup:hover {
+  transform: rotate(45deg);
+}
+
+nav {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+body {
+  font-size: 1em;
+  user-select: none;
+  z-index: 0;
+}
+
+section {
+  min-height: 100vh;
+}
+
+header {
+  position: relative;
+  height: 100vh;
+  background-color: #a43131;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/pexels-adnorf-2485336.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: saturate(0.05) contrast(1.3) brightness(1.3) opacity(0.1);
+}
+
+header > div {
+  position: relative;
+  display: grid;
+  align-content: center;
+  height: 100%;
+  animation: fadeInAnimation linear 75ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+header > div > div {
+  display: grid;
+  grid-template-areas:
+    "crest club-name"
+    "crest club-location";
+  justify-content: center;
+  align-content: center;
+}
+
+@media only screen and (max-width: 811px) {
+  header > div > div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+#crest {
+  grid-area: crest;
+  display: flex;
+  align-items: center;
+  width: 250px;
+}
+
+@media only screen and (max-width: 1081px) {
+  #crest {
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 811px) {
+  #crest {
+    width: 150px;
+    margin: 0 auto;
+  }
+}
+
+#crest img {
+  filter: saturate(0.9) contrast(0.9);
+  width: 100%;
+}
+
+#club-name {
+  grid-area: club-name;
+  font-family: "Mr Dafoe", cursive;
+  font-weight: normal;
+  font-size: 300%;
+}
+
+@media only screen and (max-width: 1081px) {
+  #club-name {
+    font-size: 225%;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 811px) {
+  #club-name {
+    font-size: 120%;
+    margin: 0 auto;
+  }
+}
+
+#club-location {
+  grid-area: club-location;
+  display: flex;
+  flex-direction: column;
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+  font-size: 200%;
+}
+
+@media only screen and (max-width: 1081px) {
+  #club-location {
+    font-size: 150%;
+  }
+}
+
+@media only screen and (max-width: 811px) {
+  #club-location {
+    font-size: 100%;
+  }
+}
+
+#tagline {
+  background-color: #a43131;
+  display: grid;
+  grid: 2 / 1;
+  align-content: center;
+  justify-content: center;
+}
+
+#tagline > div {
+  width: 40vw;
+  margin: 0 auto;
+}
+
+#tagline > div img {
+  width: 100%;
+}
+
+@media only screen and (max-width: 811px) {
+  #tagline > div {
+    width: 60vw;
+  }
+}
+
+@media only screen and (max-width: 412px) {
+  #tagline > div {
+    width: 100vw;
+  }
+}
+
+#tagline > p {
+  font-size: 600%;
+  text-align: center;
+  font-family: "Contrail One", cursive;
+  color: hsl(0, 53.9%, 29.9%);
+}
+
+@media only screen and (max-width: 1081px) {
+  #tagline > p {
+    font-size: 400%;
+  }
+}
+
+@media only screen and (max-width: 813px) {
+  #tagline > p {
+    font-size: 275%;
+  }
+}
+
+@media only screen and (max-width: 361px) {
+  #tagline > p {
+    font-size: 245%;
+  }
+}
+
+#where-when {
+  background-color: #c29049;
+  padding: 2em 0;
+  font-size: 300%;
+  font-family: "Bitter", serif;
+  color: #222;
+}
+
+@media only screen and (max-width: 1281px) {
+  #where-when {
+    font-size: 175%;
+    padding: 2em 0;
+  }
+}
+
+@media only screen and (max-width: 811px) {
+  #where-when {
+    font-size: 150%;
+    padding: 3em 0;
+  }
+}
+
+#where-when > div {
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+#where-when > div.mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 811px) {
+  #where-when > div {
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  #where-when > div.desktop {
+    display: none;
+  }
+
+  #where-when > div.mobile {
+    display: block;
+  }
+}
+
+#where-when > div .card {
+  width: 40vw;
+  border: 3px solid rgba(0, 0, 0, 0.3);
+  border-width: 0px;
+}
+
+@media only screen and (max-width: 811px) {
+  #where-when > div .card {
+    width: 90vw;
+    margin: 0 auto;
+  }
+}
+
+#where-when > div .card p {
+  margin-bottom: 1em;
+}
+
+#where-when > div .card p strong {
+  background-color: hsl(35.2, 49.8%, 56.4%);
+}
+
+#where-when > p {
+  font-size: 125%;
+  text-align: center;
+  margin-top: 1em;
+}
+
+@media only screen and (max-width: 811px) {
+  #where-when > p {
+    margin-top: 3em;
+  }
+}
+
+#where-when > p a {
+  position: relative;
+}
+
+/* https://codepen.io/srirachachacha/pen/pNyQoY */
+#where-when > p a::after {
+  content: "";
+  position: absolute;
+  top: 95%;
+  height: 3px !important;
+  width: 40%;
+  left: 30%;
+  background-color: hsl(35.2, 49.8%, 62.4%);
+  transition: 0.4s ease-out all 0.1s;
+}
+
+#where-when > p:hover a::after {
+  width: 90%;
+  left: 5%;
+  transition: 0.5s ease all;
+  background-color: hsl(0, 0%, 6.7%);
+}
+
+#gallery {
+  background-color: hsl(130, 4.1%, 28.6%);
+}
+
+#gallery > div {
+  display: grid;
+  grid: repeat(3, 33vh) / repeat(3, 1fr);
+  grid-auto-flow: row;
+  gap: 1em;
+  padding: 1em;
+}
+
+@media only screen and (max-width: 811px) {
+  #gallery > div {
+    grid: repeat(3, 250px) / repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 429px) {
+  #gallery > div {
+    grid: repeat(6, 250px) / 1fr;
+  }
+}
+
+#gallery > div > div {
+  overflow: hidden;
+  border: 6px solid snow;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.9);
+  transition: border 90ms linear;
+}
+
+#gallery > div > div:nth-child(1):hover {
+  border: 3px solid hsl(193, 52%, 55%);
+}
+
+#gallery > div > div:nth-child(4) {
+  grid-column: 1 / span 2;
+  grid-row: 2 / span 2;
+}
+
+@media only screen and (max-width: 811px) {
+  #gallery > div > div:nth-child(4) {
+    grid-column: auto;
+    grid-column: auto;
+  }
+}
+
+.car {
+  position: relative;
+  height: 100%;
+  transition: transform 90ms linear;
+  cursor: pointer;
+}
+
+.car::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(0.05) contrast(1.3) brightness(1.3) opacity(0.5);
+  transition: filter 170ms linear;
+}
+
+.car:hover::before {
+  filter: saturate(1) contrast(1) brightness(1) opacity(1);
+}
+
+#gallery > div > div:hover .car {
+  transform: scale(1.05);
+  filter: none;
+}
+
+#gallery > div > div:nth-child(1) .car::before {
+  background-image: url("../images/cars/porsche-gallery-2.jpg");
+  background-position: center top;
+}
+
+#gallery > div > div:nth-child(2) .car::before {
+  background-image: url("../images/cars/porsche-gallery-1.jpg");
+  background-position: 35% center;
+}
+
+#gallery > div > div:nth-child(3) .car::before {
+  background-image: url("../images/cars/porsche-gallery-3.jpg");
+}
+
+#gallery > div > div:nth-child(4) .car::before {
+  background-image: url("../images/cars/porsche-gallery-6.jpg");
+}
+
+#gallery > div > div:nth-child(5) .car::before {
+  background-image: url("../images/cars/porsche-gallery-5.jpg");
+}
+
+#gallery > div > div:nth-child(6) .car::before {
+  background-image: url("../images/cars/porsche-gallery-4.jpg");
+  background-position: left;
+}
+
+footer {
+  background-color: hsl(0, 0%, 6.7%);
+  color: hsl(35.2, 49.8%, 52.4%);
+  padding: 1em 0;
+}
